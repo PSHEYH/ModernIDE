@@ -34,5 +34,15 @@ public class Main {
         System.out.format("f(2.4)=%s",exp5.calculate(x)).println();
         System.out.format("f'(2.4)=%s",exp5.derivative().calculate(x)).println();
 
+
+        final Function exp6 = Sum.of(
+                Pow.of(2,Sin.of(Linear.of(1),1),1),
+                Cos.of(Ln.of(Linear.of(1),1),1)
+        );
+
+        System.out.format("f(x)=%s",exp6.toPrettyString(nf)).println();
+        System.out.format("f'(x)=%s",exp6.derivative().toPrettyString(nf)).println();
+        System.out.format("f(2.4)=%s",exp6.calculate(x)).println();
+        System.out.format("f'(2.4)=%s",exp6.derivative().calculate(x)).println();
     }
 }
